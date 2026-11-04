@@ -1,0 +1,48 @@
+{
+  "name": "@iketech/api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/main.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "db:migrate": "ts-node --transpile-only src/db/migrate.ts",
+    "db:types": "kysely-codegen --dialect postgres --out-file src/db/types.ts --exclude-pattern schema_migrations && node scripts/fix-types.js",
+    "db:seed": "ts-node --transpile-only src/db/seed.ts",
+    "db:demo": "ts-node --transpile-only src/db/demo-data.ts",
+    "test": "jest --runInBand",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.22",
+    "@nestjs/core": "^10.4.22",
+    "@nestjs/platform-express": "^10.4.22",
+    "@nestjs/swagger": "^7.4.2",
+    "@nestjs/throttler": "^5.2.0",
+    "argon2": "^0.45.1",
+    "cookie-parser": "^1.4.7",
+    "helmet": "^8.3.0",
+    "kysely": "^0.27.6",
+    "pg": "^8.23.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^10.4.22",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^29.5.14",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "@types/supertest": "^7.2.1",
+    "jest": "^29.7.0",
+    "kysely-codegen": "^0.20.0",
+    "supertest": "^7.3.1",
+    "ts-jest": "^29.4.15",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "5.5"
+  }
+}

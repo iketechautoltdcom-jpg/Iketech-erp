@@ -1,0 +1,12 @@
+{
+  "name": "iketech-erp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "IKETECH AUTO LTD ERP — Phase 1 Core Workshop",
+  "scripts": {
+    "install:all": "npm --prefix apps/api ci && npm --prefix apps/web ci",
+    "test": "npm --prefix apps/api test",
+    "typecheck": "npm --prefix apps/api run typecheck && npm --prefix apps/web run typecheck",
+    "build": "npm --prefix apps/api run build && npm --prefix apps/web run build"
+  }
+}
